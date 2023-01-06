@@ -1,0 +1,260 @@
+html
+{
+    min-height: 100vh;
+    background:linear-gradient(180deg, rgb(49, 15, 96), rgb(76, 24, 149));
+}
+body
+{
+    display: grid;
+    grid-template-columns: 40% 20% 40%;
+    position: relative;
+    height: 100vh;
+    box-sizing: border-box;
+
+}
+
+
+#header
+{
+    position: relative;
+}
+
+#title
+{
+    position: relative;
+    font-family: "mauruce";
+    letter-spacing: 0.1em;
+    margin-bottom: -7px;
+    font-size: 7vw;
+    text-align: center;
+    color:rgb(65, 71, 220);
+    bottom: 3vw;
+    opacity: 0;
+    animation: intro 2s forwards;
+}
+
+
+#middle
+{
+    display: inline-table;
+    text-align: center;
+    position: relative;
+    transform: translateY(-1.7vw);
+}
+
+#left
+{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+
+#spanishRec, #asianRec
+{
+    font-family: "fog";
+    letter-spacing: 0.1em;
+    color:rgb(65, 71, 220);
+    opacity: 0;
+}
+#topLeft, #bottomLeft, #spanishRec
+{
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    pointer-events: none;
+    left: -100vw;
+    position: relative;
+    opacity: 0;
+    animation: leftSlide 1s forwards;
+    animation-delay: 0.5s;
+}
+
+#descriptionContainer
+{
+    position: absolute;
+    border: 0.25vw dotted blueviolet;
+    border-radius: 03em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 5%;
+    right: 50%;
+    transform: translate(50%);
+    width: 100%;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 1.5s;
+}
+
+#projectBy
+{
+    display: block;
+    color: rgb(224, 216, 255);
+    font-family: "mauruce";
+    letter-spacing: 2px;
+    font-size: 1.3vw;
+    margin-top: 0.5vw;
+}
+
+#TOP
+{
+    margin:0.5vw 0;
+    width: 17vw;
+    display: block;
+    transform: translateX(1.5%);
+}
+
+#topLeft:hover, #bottomLeft:hover, #topRight:hover, #bottomRight:hover
+{
+    transform: scale(1.06);
+}
+
+#topLeftFrame, #bottomLeftFrame, #topRightFrame, #bottomRightFrame
+{
+
+    filter: hue-rotate(0deg) saturate(0);
+    display: block;
+    z-index: 2;
+}
+
+#topLeft:hover > #topLeftFrame, #bottomLeft:hover > #bottomLeftFrame, #topRight:hover > #topRightFrame, #bottomRight:hover > #bottomRightFrame
+{
+    transition: 0.75s;
+    filter: hue-rotate(-15deg) saturate(2);
+}
+
+#tamales, #birriaTacos, #beefAsparagus, #riceVermacelli
+{
+    position: absolute;
+
+    display: inline;
+    object-fit: cover;
+    pointer-events: auto;
+    box-shadow: 0 0 2vw white;
+}
+
+#topLeft:hover > #tamales, #bottomLeft:hover > #birriaTacos, #topRight:hover > #beefAsparagus, #bottomRight:hover > #riceVermacelli
+{
+    box-shadow: 0 0 4vw white;
+    transition-duration: 1s;
+}
+
+
+#topLeftOverlay, #bottomLeftOverlay, #topRightOverlay, #bottomRightOverlay
+{
+    position: absolute;
+    width: 15vw;
+    height: 15vw;
+    background: rgba(0, 0, 0,0);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: "fog";
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: auto;
+    text-decoration: none;
+}
+
+
+#topLeftOverlay > *,#bottomLeftOverlay > *, #topRightOverlay > *, #bottomRightOverlay > *
+{
+    transform: translateY(1.5vw);
+    transition: transform 0.5s;
+}
+
+#topLeftOverlay:hover , #bottomRightOverlay:hover
+{
+   opacity: 1;
+   width: 14vw;
+   height: 13vw;
+   background: rgba(0, 0, 0,0.65);
+   
+}
+
+#bottomLeftOverlay:hover , #topRightOverlay:hover
+{
+   opacity: 1;
+   width: 16vw;
+   height: 12.5vw;
+   background: rgba(0, 0, 0,0.65);
+   
+}
+
+
+#topLeftOverlay:hover > *,#bottomLeftOverlay:hover > *, #topRightOverlay:hover > *, #bottomRightOverlay:hover > *
+{
+    transform: translateY(0.5vw);
+}
+
+
+#topLeftHoverTitle, #bottomLeftHoverTitle, #topRightHoverTitle, #bottomRightHoverTitle
+{
+    display: block;
+    font-size: 1.6 vw;
+    text-decoration:underline;
+    margin-top: 0.4vh;
+}
+
+#right
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+}
+
+
+#topRight, #bottomRight, #asianRec
+{
+    margin: 0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+    pointer-events: none;
+    right: -100vw;
+    position: relative;
+    opacity: 0;
+    animation: rightSlide 2s forwards;
+    animation-delay: 0.5s;  
+}
+
+@keyframes intro {
+    100% {bottom: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes fadeIn {
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes leftSlide {
+    100% {left: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes rightSlide {
+    100% {right: 0};
+    from {opacity: 0} to {opacity: 1};
+}
+
+@keyframes appear{
+
+    from {opacity: 0} to {opacity: 1};
+}
+
+@font-face{
+    font-family: "fog";
+    src: url(resources/fog.otf);
+}
+
+@font-face {
+    font-family: "mauruce";
+    src: url(resources/mauruce.ttf);
+}

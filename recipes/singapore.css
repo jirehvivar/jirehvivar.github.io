@@ -1,0 +1,139 @@
+html
+{
+    height: 170%;
+    
+
+}
+body
+{
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    position: relative;
+    background: radial-gradient(circle at 50%, rgb(203, 201, 249), rgb(203, 201, 249) 63%, rgb(49, 15, 96) 63%, rgb(94, 29, 184) 75% );
+    height:max-content;
+    box-sizing: border-box;
+    
+    
+}
+#left
+{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-around;
+}
+#middle
+{
+    display: inline-table;
+    position: relative;
+    text-align: center;
+    transform: translateY(-1.7vw);
+}
+
+
+
+#singaporeHeader
+{
+    
+    position:absolute;
+    font-family: "fog";
+    letter-spacing: 0.12em;
+    font-size: 1.7em;
+ 
+    bottom: 2em;
+    text-align: center;
+    color:rgb(145, 163, 219);
+}
+
+a:link{text-decoration: none;}
+a{color:rgb(145, 163, 219);}
+
+#circle
+{
+    z-index: 2;
+    position: relative;
+    top: 7em;
+    left: 11em;
+    border-radius: 50%;
+    background-color: rgb(51, 28, 104);
+    width: 12em;
+    height: 12em;
+    box-shadow: 0 0 0px black;
+
+    animation: bounce 2s forwards;
+
+    transform: scale(0.01);
+    transition:0.3s;
+
+
+}
+
+#circle:hover
+{
+    height: 12.5em;
+    width:12.5em;
+}
+
+
+
+#ingredients
+{
+    position: relative;
+ 
+    font-size: 1.3vw;
+    color: rgb(51, 28, 104);
+    bottom: -0.4em ;
+    
+
+}
+
+#redirect
+{
+    font-family: "fog";
+
+}
+
+
+#box
+{
+    position:relative;
+    z-index: 1;
+    border-radius: 1em;
+    height: 2.3em;
+    background-color:rgb(145, 163, 219);
+    top: 0em;
+    box-sizing: border-box;
+    animation: rightSlide 2s forwards;
+
+    
+}
+
+
+@keyframes rightSlide {
+     100%{top:5em};
+}
+
+@keyframes bounce {
+    from { transform: translate3d(-800px, -150px, 0);     }
+    to   { transform: translate3d(0,0,0); }
+  }
+
+@keyframes intro {
+    100% {bottom: 0};
+    from {opacity: 0} to {opacity: 1};
+    
+}
+
+
+@keyframes fadeIn {
+    from{opacity: 0} to {opacity: 1}
+    
+}
+@font-face{
+    font-family: "fog";
+    src: url(resources/fog.otf);
+}
+
+@font-face {
+    font-family: "mauruce";
+    src: url(resources/mauruce.ttf);
+}
