@@ -8,7 +8,8 @@ body
     display: grid;
     grid-template-columns: 40% 20% 40%;
     position: relative;
-    height: 100vh;
+    margin: 0;
+    height: max-content;
     box-sizing: border-box;
 
 }
@@ -64,7 +65,7 @@ body
     justify-content: center;
     transition: 0.5s;
     pointer-events: none;
-    left: -100vw;
+    left: -30vw;
     position: relative;
     opacity: 0;
     animation: leftSlide 1s forwards;
@@ -114,9 +115,13 @@ body
 
 #topLeftFrame, #bottomLeftFrame, #topRightFrame, #bottomRightFrame
 {
-
+    margin-bottom: 1em;
+    margin-right: 5px;
+    width: 26vw;
+    height: 27vw;
     filter: hue-rotate(0deg) saturate(0);
     display: block;
+    
     z-index: 2;
 }
 
@@ -129,10 +134,12 @@ body
 #tamales, #birriaTacos, #beefAsparagus, #riceVermacelli
 {
     position: absolute;
-
+    width: 18vw;
+    height: 18vw;
     display: inline;
     object-fit: cover;
     pointer-events: auto;
+    border-radius: 10%;
     box-shadow: 0 0 2vw white;
 }
 
@@ -146,8 +153,9 @@ body
 #topLeftOverlay, #bottomLeftOverlay, #topRightOverlay, #bottomRightOverlay
 {
     position: absolute;
-    width: 15vw;
-    height: 15vw;
+    border-radius: 10%;
+    width: 18vw;
+    height: 18vw;
     background: rgba(0, 0, 0,0);
     color: #ffffff;
     display: flex;
@@ -168,23 +176,15 @@ body
     transition: transform 0.5s;
 }
 
-#topLeftOverlay:hover , #bottomRightOverlay:hover
+#topLeftOverlay:hover , #bottomRightOverlay:hover , #bottomLeftOverlay:hover , #topRightOverlay:hover
 {
    opacity: 1;
-   width: 14vw;
-   height: 13vw;
+
    background: rgba(0, 0, 0,0.65);
    
 }
 
-#bottomLeftOverlay:hover , #topRightOverlay:hover
-{
-   opacity: 1;
-   width: 16vw;
-   height: 12.3vw;
-   background: rgba(0, 0, 0,0.65);
-   
-}
+
 
 
 #topLeftOverlay:hover > *,#bottomLeftOverlay:hover > *, #topRightOverlay:hover > *, #bottomRightOverlay:hover > *
