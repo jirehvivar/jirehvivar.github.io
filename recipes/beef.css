@@ -6,40 +6,31 @@ html
 }
 body
 {
-    display: grid;
-    grid-template-columns: 30% 40% 30%;
-    position: relative;
-    background: radial-gradient(circle at 50%, rgb(203, 201, 249), rgb(203, 201, 249) 63%, rgb(49, 15, 96) 63%, rgb(94, 29, 184) 75% );
-    height:max-content;
-    box-sizing: border-box;
-    
-    
-}
-#left
-{
     display: flex;
-    flex-direction:column;
-    justify-content: space-around;
-}
-#middle
-{
-    display: inline-table;
-    position: relative;
-    text-align: center;
-    transform: translateY(-1.7vw);
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 50%, rgb(203, 201, 249), rgb(203, 201, 249) 63%, rgb(49, 15, 96) 63%, rgb(94, 29, 184) 75% );
+    
+    
 }
 
+#middle {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    margin-top: 3em;
+    margin-right: 1em;
+}
 
 
 #beefHeader
 {
-    
-    position:absolute;
+    position: absolute;
     font-family: "fog";
     letter-spacing: 0.12em;
     font-size: 1.7em;
- 
-    bottom: 2em;
     text-align: center;
     color:rgb(145, 163, 219);
 }
@@ -49,22 +40,19 @@ a{color:rgb(145, 163, 219);}
 
 #circle
 {
+    display: flex;
     z-index: 2;
-    position: relative;
-    top: 7em;
-    left: 11em;
+    align-self: center;
+
+    align-items: center;
     border-radius: 50%;
+    margin: 0 auto;
     background-color: rgb(51, 28, 104);
     width: 12em;
     height: 12em;
-    box-shadow: 0 0 0px black;
-
     animation: bounce 2s forwards;
-
     transform: scale(0.01);
     transition:0.3s;
-
-
 }
 
 #circle:hover
@@ -77,15 +65,14 @@ a{color:rgb(145, 163, 219);}
 
 #ingredients
 {
-    position: relative;
- 
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     font-size: 1.3vw;
     color: rgb(51, 28, 104);
-    bottom: -0.4em ;
-    
+   
 
 }
-
 #redirect
 {
     font-family: "fog";
@@ -95,22 +82,17 @@ a{color:rgb(145, 163, 219);}
 
 #box
 {
-    position:relative;
+
     z-index: 1;
     border-radius: 1em;
-    height: 2.3em;
+    height: 2.5em;
     background-color:rgb(145, 163, 219);
-    top: 0em;
-    box-sizing: border-box;
-    animation: rightSlide 2s forwards;
-
+    animation: intro 2s forwards;
+    gap: 2px;
     
 }
 
 
-@keyframes rightSlide {
-     100%{top:5em};
-}
 
 @keyframes bounce {
     from { transform: translate3d(-800px, -150px, 0);     }
@@ -118,8 +100,8 @@ a{color:rgb(145, 163, 219);}
   }
 
 @keyframes intro {
-    100% {bottom: 0};
-    from {opacity: 0} to {opacity: 1};
+    100% {bottom: 0;}
+    from {opacity: 0} to {opacity: 1;}
     
 }
 
